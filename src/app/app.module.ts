@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NewclientComponent } from './components/newclient/newclient.component';
 import { EditclientComponent } from './components/editclient/editclient.component';
+import { NewlocationComponent } from './components/newlocation/newlocation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditclientComponent } from './components/editclient/editclient.componen
     InfosComponent,
     TaxisComponent,
     NewclientComponent,
-    EditclientComponent
+    EditclientComponent,
+    NewlocationComponent
   ],
   imports: [
     BrowserModule,

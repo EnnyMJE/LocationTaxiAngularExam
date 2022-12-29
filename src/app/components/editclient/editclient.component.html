@@ -1,0 +1,91 @@
+<div class="container">
+  <form [formGroup]="clientFormGroup" *ngIf="clientFormGroup">
+    <div class="form-group">
+      <label>ID CLIENT</label>
+      <input type="text" class="form-control" formControlName="id_client" readonly>
+    </div>
+
+    <div class="form-group">
+      <label>E-Mail</label>
+      <input type="text" class="form-control" formControlName="mail"
+             [ngClass]="{'is-invalid':submitted && clientFormGroup.controls.mail.errors}">
+      <div *ngIf="submitted && clientFormGroup.controls.mail.errors" class="invalid-feedback">
+        <div *ngIf="clientFormGroup.controls.mail.errors.required">
+          E-mail obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Nom</label>
+      <input type="text" class="form-control" formControlName="nom"
+             [ngClass]="{'is-invalid': submitted &&
+      clientFormGroup.controls.nom.errors}">
+      <div *ngIf="submitted && clientFormGroup.controls.nom.errors"
+           class="invalid-feedback">
+        <div *ngIf="clientFormGroup.controls.nom.errors.required">
+          Nom obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Prénom</label>
+      <input type="text" class="form-control" formControlName="prenom"
+             [ngClass]="{'is-invalid': submitted &&
+      clientFormGroup.controls.prenom.errors}">
+      <div *ngIf="submitted && clientFormGroup.controls.prenom.errors"
+           class="invalid-feedback">
+        <div *ngIf="clientFormGroup.controls.prenom.errors.required">
+          Prénom obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Tél</label>
+      <input type="text" class="form-control" formControlName="tel"
+             [ngClass]="{'is-invalid': submitted &&
+      clientFormGroup.controls.tel.errors}">
+      <div *ngIf="submitted && clientFormGroup.controls.tel.errors"
+           class="invalid-feedback">
+        <div *ngIf="clientFormGroup.controls.tel.errors.required">
+          Téléphone obligatoire
+        </div>
+      </div>
+    </div>
+
+    <button (click)="onUpdateClient()" class="btn btn-success">Save</button>
+    <button (click)="onShowLocClient()" class="btn btn-success">Locations</button>
+  </form>
+</div>
+
+<ng-container *ngIf="locations">
+  <ng-container *ngIf="locations.length>0 else vide">
+    <table class="table">
+      <thead>
+      <th>ID Location</th>
+      <th>Date Location</th>
+      <th>Total KM</th>
+      <th>Cout</th>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let loc of locations">
+        <td>{{loc.id}}</td>
+        <td>{{loc.dateloc|date:'dd-MM-yyyy'}}</td>
+        <td>{{loc.kmtotal}}</td>
+        <td>{{loc.cout}}</td>
+      </tr>
+      </tbody>
+
+    </table>
+  </ng-container>
+  <ng-template #vide>
+    Aucune location pour ce client
+  </ng-template>
+</ng-container>
+
+<app-newlocation [cliact]="clientFormGroup" (newLocation)="onAddLocation($event)"></app-newlocation>
+
+

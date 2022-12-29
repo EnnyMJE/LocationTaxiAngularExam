@@ -10,8 +10,8 @@ export class ClientsService {
 
   constructor(private httpClient:HttpClient) {}
 
-  getClient(id_client:number):Observable<Client>{
-    return this.httpClient.get<Client>(this.host+"/clients/"+id_client);
+  getClient(id_Client:number):Observable<Client>{
+    return this.httpClient.get<Client>(this.host+"/clients/"+id_Client);
   }
 
   getClientNom(nom:string):Observable<Client[]>{
