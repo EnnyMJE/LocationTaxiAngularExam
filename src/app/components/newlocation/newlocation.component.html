@@ -1,0 +1,23 @@
+<div class="container">
+  <form [formGroup]="locationFormGroup" *ngIf="locationFormGroup">
+    <table class="table">
+      <thead>
+      <th>Id Location</th>
+      <th>Date</th>
+      <th>Total KM</th>
+      <th>Cout</th>
+      </thead>
+
+      <tbody>
+      <td *ngIf="loc ; else vide">{{loc.id}}</td>
+      <ng-template #vide><td></td></ng-template>
+      <td> <input type="date" class="form-control" formControlName="dateloc"></td>
+      <td> <input type="text" class="form-control" formControlName="kmtotal"></td>
+      <td> <input type="text" class="form-control" formControlName="cout"></td>
+      </tbody>
+    </table>
+    <button (click)="onSaveLocation()" class="btn btn-success">
+      Save
+    </button>
+  </form>
+</div>
