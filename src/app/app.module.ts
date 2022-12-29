@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NewclientComponent } from './components/newclient/newclient.component';
 import { EditclientComponent } from './components/editclient/editclient.component';
 import { NewlocationComponent } from './components/newlocation/newlocation.component';
+import { EditlocationComponent } from './components/editlocation/editlocation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NewlocationComponent } from './components/newlocation/newlocation.compo
     TaxisComponent,
     NewclientComponent,
     EditclientComponent,
-    NewlocationComponent
+    NewlocationComponent,
+    EditlocationComponent
   ],
   imports: [
     BrowserModule,

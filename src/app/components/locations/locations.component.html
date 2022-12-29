@@ -1,1 +1,18 @@
-<p>locations works!</p>
+<!--<form (ngSubmit)="onSearch()">
+  ID Location : <input type="text" [(ngModel)]="id" name="id">
+</form>
+<div *ngIf="location">
+  <app-editlocation [location]="location"></app-editlocation>
+</div> -->
+
+<form (ngSubmit)="onSearch()" class="form-inline">
+  <label>ID de Location</label>
+  <input [(ngModel)]="id" name="id" type="text">
+  <button class="btn btn-sm btn-outline-info m-lg-2">
+    <span class="fa fa-search"></span>
+  </button>
+</form>
+
+<ng-container *ngIf="location">
+  <app-editlocation [location]="location"></app-editlocation>
+</ng-container>
