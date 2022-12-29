@@ -1,1 +1,53 @@
-<p>adresses works!</p>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar navbar-nav">
+    <li>
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-inline">
+        <label>Localité</label>
+        <input ngModel name="localite" type="text">
+        <button class="btn btn-sm btn-outline-info m-lg-2">
+          <span class="fa fa-search"></span>
+        </button>
+      </form>
+    </li>
+    <li>
+      <button (click)="onNewAdresse()" class="btn btn-sm btn-outline-info ms-2">New</button>
+    </li>
+  </ul>
+</nav>
+
+<ng-container *ngIf="adresses">
+  <ng-container *ngIf="adresses.length>0 else inconnu">
+    <table class="table">
+      <thead>
+      <th>ID Adresse</th>
+      <th>CP</th>
+      <th>Localité</th>
+      <th>Rue</th>
+      <th>Num</th>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let a of adresses">
+        <td>{{a.id_adresse}}</td>
+        <td>{{a.cp}}</td>
+        <td>{{a.localite}}</td>
+        <td>{{a.rue}}</td>
+        <td>{{a.num}}</td>
+        <td>
+          <button (click)=onDelete(a) class="btn btn-danger">
+            <span class="fa fa-trash-o"></span>
+          </button>
+        </td>
+        <td>
+          <button (click)=onEdit(a) class="btn btn-danger">
+            <span class="fa fa-edit"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #inconnu>
+    Localité inconnu
+  </ng-template>
+</ng-container>
