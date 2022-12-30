@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 import {Taxi} from "../entities/taxi.entities";
 
 @Injectable({providedIn:"root"})
-export class AdresseService {
+export class TaxiService {
   private host = environment.host;
 
   constructor(private httpClient:HttpClient) {}
