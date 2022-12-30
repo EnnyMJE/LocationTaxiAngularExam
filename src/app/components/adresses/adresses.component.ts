@@ -49,8 +49,9 @@ export class AdressesComponent implements OnInit {
     }
   }
 
+
   onEdit(a: Adresse) {
-    this.router.navigateByUrl("editadresse/"+a.id_adresse);
+    this.router.navigateByUrl("editAdresse/"+a.id_adresse);
 
   }
 }
