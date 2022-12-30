@@ -30,7 +30,7 @@ export class AdressesComponent implements OnInit {
 
   onNewAdresse() {
     //todo complete this
-    //this.router.navigateByUrl("newAdresse")
+    this.router.navigateByUrl("newAdresse")
   }
 
   onDelete(a: Adresse) {

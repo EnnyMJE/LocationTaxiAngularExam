@@ -8,6 +8,7 @@ import {TaxisComponent} from './components/taxis/taxis.component';
 import {HomeComponent} from './components/home/home.component';
 import {NewclientComponent} from "./components/newclient/newclient.component";
 import {EditclientComponent} from "./components/editclient/editclient.component";
+import {NewadresseComponent} from "./components/newadresse/newadresse.component";
 const routes: Routes = [
   {path: 'clients', component: ClientsComponent},
   {path: 'locations', component: LocationsComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'taxis', component: TaxisComponent},
   {path: '', component: HomeComponent},
   {path: 'newClient', component: NewclientComponent},
-  {path: 'editClient/:id_client', component: EditclientComponent}
+  {path: 'editClient/:id_client', component: EditclientComponent},
+  {path: 'newAdresse', component: NewadresseComponent}
 ];
 
 @NgModule({

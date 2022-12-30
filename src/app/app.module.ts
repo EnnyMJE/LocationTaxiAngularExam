@@ -16,6 +16,7 @@ import { NewclientComponent } from './components/newclient/newclient.component';
 import { EditclientComponent } from './components/editclient/editclient.component';
 import { NewlocationComponent } from './components/newlocation/newlocation.component';
 import { EditlocationComponent } from './components/editlocation/editlocation.component';
+import { NewadresseComponent } from './components/newadresse/newadresse.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditlocationComponent } from './components/editlocation/editlocation.co
     NewclientComponent,
     EditclientComponent,
     NewlocationComponent,
-    EditlocationComponent
+    EditlocationComponent,
+    NewadresseComponent
   ],
   imports: [
     BrowserModule,
