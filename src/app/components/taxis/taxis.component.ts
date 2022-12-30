@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Taxi} from "../../entities/taxi.entities";
 import {TaxiService} from "../../services/taxi.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-taxis',
@@ -12,7 +13,7 @@ export class TaxisComponent implements OnInit {
   id_taxi:number=0;
 
 
-  constructor( private taxiservice : TaxiService) { }
+  constructor( private taxiservice : TaxiService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,11 @@ export class TaxisComponent implements OnInit {
         error: err => alert("taxi introuvable")
       }
     )
+
+  }
+
+  onNewTaxi() {
+    this.router.navigateByUrl('newTaxi');
 
   }
 }

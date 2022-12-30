@@ -19,6 +19,7 @@ import { EditlocationComponent } from './components/editlocation/editlocation.co
 import { NewadresseComponent } from './components/newadresse/newadresse.component';
 import { EditadresseComponent } from './components/editadresse/editadresse.component';
 import { EdittaxiComponent } from './components/edittaxi/edittaxi.component';
+import { NewtaxiComponent } from './components/newtaxi/newtaxi.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EdittaxiComponent } from './components/edittaxi/edittaxi.component';
     EditlocationComponent,
     NewadresseComponent,
     EditadresseComponent,
-    EdittaxiComponent
+    EdittaxiComponent,
+    NewtaxiComponent
   ],
   imports: [
     BrowserModule,

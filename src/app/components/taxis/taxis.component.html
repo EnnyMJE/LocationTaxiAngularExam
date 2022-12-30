@@ -1,13 +1,19 @@
-
-
-<form (ngSubmit)="onSearch()" class="form-inline">
-  <label>ID TAXI</label>
-  <input [(ngModel)]="id_taxi" name="id_taxi" type="text">
-  <button class="btn btn-sm btn-outline-info m-lg-2">
-    <span class="fa fa-search"></span>
-  </button>
-</form>
-
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar navbar-nav">
+    <li>
+      <form (ngSubmit)="onSearch()" class="form-inline">
+        <label>ID TAXI</label>
+        <input [(ngModel)]="id_taxi" name="id_taxi" type="text">
+        <button class="btn btn-sm btn-outline-info m-lg-2">
+          <span class="fa fa-search"></span>
+        </button>
+      </form>
+    </li>
+    <li>
+      <button (click)="onNewTaxi()" class="btn btn-sm btn-outline-info ms-2">New</button>
+    </li>
+  </ul>
+</nav>
 <ng-container *ngIf="taxi">
   <app-edittaxi [taxi]="taxi"></app-edittaxi>
 </ng-container>
