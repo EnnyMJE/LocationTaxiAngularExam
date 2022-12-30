@@ -1,0 +1,41 @@
+<div class="container">
+  <form [formGroup]="taxiFormGroup" *ngIf="taxiFormGroup">
+
+    <div class="form-group">
+      <label>Immatricule</label>
+      <input type="text" class="form-control" formControlName="immatriculation"
+             [ngClass]="{'is-invalid': submitted && taxiFormGroup.controls.immatriculation.errors}">
+      <div *ngIf="submitted && taxiFormGroup.controls.immatriculation.errors" class="invalid-feedback">
+        <div *ngIf="taxiFormGroup.controls.immatriculation.errors.required">
+          Mail obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>nbr_max_passagers</label>
+      <input type="text" class="form-control" formControlName="nbr_max_passagers"
+             [ngClass]="{'is-invalid': submitted && taxiFormGroup.controls.nbr_max_passagers.errors}">
+      <div *ngIf="submitted && taxiFormGroup.controls.nbr_max_passagers.errors" class="invalid-feedback">
+        <div *ngIf="taxiFormGroup.controls.nbr_max_passagers.errors.required">
+          Mail obligatoire
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>prixkm</label>
+      <input type="text" class="form-control" formControlName="prixkm"
+             [ngClass]="{'is-invalid': submitted && taxiFormGroup.controls.prixkm.errors}">
+      <div *ngIf="submitted && taxiFormGroup.controls.prixkm.errors" class="invalid-feedback">
+        <div *ngIf="taxiFormGroup.controls.prixkm.errors.required">
+          prixkm obligatoire
+        </div>
+      </div>
+    </div>
+
+    <button (click)="onSaveTaxi()" class="btn btn-success">Save</button>
+
+  </form>
+</div>
