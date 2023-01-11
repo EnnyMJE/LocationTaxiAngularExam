@@ -1,0 +1,27 @@
+<form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-inline">
+  <label>Cout</label>
+  <input ngModel name="cout" type="text">
+  <button class="btn btn-sm btn-outline-info m-lg-2">
+    <span class="fa fa-search"></span>
+  </button>
+</form>
+<ng-container *ngIf="locations">
+  <ng-container *ngIf="locations.length>0 else inconnu">
+    <tbody>
+    <tr *ngFor="let l of locations">
+      <td>id_client : {{l.client.id_client}}</td>
+      <td>nom_client: {{l.client.nom}}</td>
+      <td>prenom_client: {{l.client.prenom}}</td>
+      <td>mail_client: {{l.client.mail}}</td>
+      <td>tel: {{l.client.tel}}</td>
+    </tr>
+    </tbody>
+  </ng-container>
+  <ng-template #inconnu>
+    cout n'existe
+  </ng-template>
+
+</ng-container>
+
+
+
