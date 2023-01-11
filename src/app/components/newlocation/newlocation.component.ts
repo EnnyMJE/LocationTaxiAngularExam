@@ -23,6 +23,7 @@ export class NewlocationComponent implements OnInit {
       dateloc: [formatDate(new Date(), 'yyyy-MM-dd', 'en')],
       kmtotal:['',Validators.required],
       cout: ['',Validators.required]
+
     });
   }
 
@@ -37,6 +38,8 @@ export class NewlocationComponent implements OnInit {
       err=> {
       alert(err.headers.get("error"));
       });
+
+
 
   }
 }

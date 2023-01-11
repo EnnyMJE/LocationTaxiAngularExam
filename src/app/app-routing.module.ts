@@ -11,6 +11,7 @@ import {EditclientComponent} from "./components/editclient/editclient.component"
 import {NewadresseComponent} from "./components/newadresse/newadresse.component";
 import {EditadresseComponent} from "./components/editadresse/editadresse.component";
 import {NewtaxiComponent} from "./components/newtaxi/newtaxi.component";
+import {ExamenComponent} from "./components/examen/examen.component";
 const routes: Routes = [
   {path: 'clients', component: ClientsComponent},
   {path: 'locations', component: LocationsComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'editClient/:id_client', component: EditclientComponent},
   {path: 'newAdresse', component: NewadresseComponent},
   {path: 'editAdresse/:id_adresse', component: EditadresseComponent},
-  {path: 'newTaxi', component: NewtaxiComponent}
+  {path: 'newTaxi', component: NewtaxiComponent},
+  {path: 'examen', component: ExamenComponent}
 ];
 
 @NgModule({

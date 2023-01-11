@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
+
   clients?: Client[];
   constructor(private clientsService: ClientsService, private router: Router) {}
 
@@ -17,7 +18,8 @@ export class ClientsComponent implements OnInit {
   onSearch(value: any) {
     this.clientsService.getClientNom(value.nom).subscribe(
       {
-        next: data => {this.clients = data}
+        next: data => {this.clients = data;
+        }
       });
   }
 

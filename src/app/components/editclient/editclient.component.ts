@@ -15,6 +15,7 @@ export class EditclientComponent implements OnInit {
   submitted = false;
   id_Client: number;
   locations?: Location[];
+  kmTotalSum?: number = 0;
 
 
   constructor(private clientService: ClientsService, private locationService: LocationService, private fb:FormBuilder,
@@ -29,7 +30,8 @@ export class EditclientComponent implements OnInit {
         mail: [client.mail, Validators.required],
         nom: [client.nom, Validators.required],
         prenom: [client.prenom, Validators.required],
-        tel: [client.tel, Validators.required]
+        tel: [client.tel, Validators.required],
+        
       })
       });
   }

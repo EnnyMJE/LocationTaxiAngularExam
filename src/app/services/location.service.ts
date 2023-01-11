@@ -33,4 +33,8 @@ export class LocationService {
     return this.httpClient.get<Location>(this.host+'/locations/' +id);
   }
 
+  searchcout(cout:number):Observable<Location[]>{
+    return this.httpClient.get<Location[]>(this.host+'/locations/cout='+cout);
+  }
+
 }
